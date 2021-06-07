@@ -1,0 +1,19 @@
+.container-fluid {
+
+margin: 0;
+padding: 0;
+
+}
+.header-img {
+
+height: 200px;
+background-image: url(https://res.cloudinary.com/dhg51yakg/image/upload/v1623041805/products/neutral-abstract-texture-minimal-background_h7zrbz.jpg);
+background-color: bisque;
+
+}
+
+app-form {
+    position: absolute;
+    width: 100%;
+    top: -10px;
+}

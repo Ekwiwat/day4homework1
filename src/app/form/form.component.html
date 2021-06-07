@@ -1,1 +1,79 @@
-<p>form works!</p>
+<div class="container shadow my-5">
+    <form [formGroup]='form'>
+        <div class="input-wrapper mb-4">
+            <div class="label">
+                <h5>Name <span class="text-danger">*</span></h5>
+            </div>
+            <input class="half" type="text" formControlName="name" placeholder="Your answer">
+            <span class="text-danger" *ngIf="isNameValid">Name is required</span>
+        </div>
+
+        <div class="input-wrapper my-4">
+            <div class="label">
+                <h5>Email <span class="text-danger">*</span></h5>
+            </div>
+            <input class="half" type="text" formControlName="email" placeholder="Your answer">
+            <span class="text-danger" *ngIf="isEmailValid">Email is required</span>
+            <span class="text-danger" *ngIf="isEmailFormValid">Invalid Email Form</span>
+        </div>
+
+        <div class="input-wrapper my-4">
+            <div class="label">
+                <h5>Postal Address <span class="text-danger">*</span></h5>
+            </div>
+            <input type="text" formControlName="postalAddress" placeholder="Your answer">
+            <span class="text-danger" *ngIf="isPostalAddressValid">Postal Address is required</span>
+        </div>
+        <div class="input-wrapper my-4">
+            <div class="label">
+                <h5>Comments</h5>
+            </div>
+            <input type="text" formControlName="comments" placeholder="Your answer">
+        </div>
+
+        <button class="btn btn-primary mt-5" (click)="onSubmit()">SUBMIT</button>
+        <div class="mt-2 text-center">
+            <span class="text-success" *ngIf="isFormValid">Your Comments Submitted</span>
+        </div>
+    </form>
+</div>
+
+<!-- [disabled]="!name || !email || !postalAddress || !comments" -->
+
+<!-- <form class="form-horizontal" [formGroup]="form">
+
+    <div class="form-group" [ngClass]="displayFieldCss('name')">
+        <div class="col-sm-12">
+            <label for="name" class="control-label required">Name</label>
+            <input type="text" id="name" class="form-control" formControlName="name">
+            <app-field-error-display [displayError]="isFieldValid('name')" errorMsg="Please inform your name">
+            </app-field-error-display>
+        </div>
+    </div>
+
+    <div class="form-group" [ngClass]="displayFieldCss('email')">
+        <div class="col-sm-12">
+            <label for="email" class="control-label required">Email</label>
+            <input type="text" id="email" class="form-control" formControlName="email">
+            <app-field-error-display [displayError]="isFieldValid('email')" errorMsg="Please inform your email">
+            </app-field-error-display>
+        </div>
+    </div>
+    <div class="form-group" [ngClass]="displayFieldCss('postalAddress')">
+        <div class="col-sm-12">
+            <label for="postalAddress" class="control-label required">Postal Address</label>
+            <input type="text" id="postalAddress" class="form-control" formControlName="postalAddress">
+            <app-field-error-display [displayError]="isFieldValid('postalAddress')"
+                errorMsg="Please inform your Postal Address">
+            </app-field-error-display>
+        </div>
+    </div>
+    <div class="form-group" [ngClass]="displayFieldCss('comments')">
+        <div class="col-sm-12">
+            <label for="comments" class="control-label required">Comments</label>
+            <input type="text" id="comments" class="form-control" formControlName="email">
+        </div>
+    </div>
+
+    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+</form> -->
